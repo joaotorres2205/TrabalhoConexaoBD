@@ -3,47 +3,37 @@ package produto;
 import java.util.LinkedList;
 
 public class Lista {
-	private static LinkedList<Produto> lista = new LinkedList<Produto>();
-	
+private static LinkedList<Produto> lista = new LinkedList<Produto>();
 	
 	public void inserir(Produto p) {
 		lista.add(p);
 	}
 	
-	public LinkedList<Produto> listar(){
+	public LinkedList<Produto> listar() {
 		return lista;
 	}
-
-	public int getTotalq() {
-		int totalq = 0;
-		for (Produto p: lista) {
-			totalq = totalq + p.getQuantidade();
+	
+	public double getTotalPrecoVenda() {
+		double total = 0.0;
+		for (Produto p : lista) {
+			total += p.getPrecoVenda();
 		}
-		return totalq;
-	}
-
-	public double getTotalv() {
-		double totalv = 0;
-		for (Produto p: lista) {
-			totalv = totalv + (p.getVenda() * p.getQuantidade());
-		}
-		return totalv;
+		return total;
 	}
 	
-	public double getTotalc() {
-		double totalc = 0;
-		for (Produto p: lista) {
-			totalc = totalc + (p.getCusto() * p.getQuantidade());
+	public double getTotalPrecoCusto() {
+		double total = 0.0;
+		for (Produto p : lista) {
+			total += p.getPrecoCusto();
 		}
-		return totalc;
+		return total;
 	}
 	
-	public double getLucro() {
-		double lucro = 0;
-		for (Produto p: lista) {
-			lucro = lucro + (p.getVenda() * p.getQuantidade()) - (p.getCusto() * p.getQuantidade());
+	public double getTotalSaldo() {
+		double saldo = 0.0;
+		for (Produto p : lista) {
+			saldo += p.getSaldo();
 		}
-		return lucro;
+		return saldo;
 	}
-}	
-	
+}

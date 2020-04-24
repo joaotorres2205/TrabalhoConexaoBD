@@ -1,12 +1,30 @@
 package produto;
 
 public class Produto {
+	private int idproduto;
 	private String descricao;
 	private String marca;
-	private double custo;
-	private double venda;
-	private int quantidade;
+	private double precoCusto;
+	private double precoVenda;
+	private double saldo;
 	
+	
+	public Produto() {
+		this.descricao = "";
+		this.marca = "";
+		this.precoCusto = 0.0;
+		this.precoVenda = 0.0;
+		this.saldo = 0.0;
+	}
+	
+	public int getIdproduto() {
+		return idproduto;
+	}
+
+	public void setIdproduto(int idproduto) {
+		this.idproduto = idproduto;
+	}
+
 	public String getDescricao() {
 		return descricao;
 	}
@@ -19,23 +37,22 @@ public class Produto {
 	public void setMarca(String marca) {
 		this.marca = marca;
 	}
-	public double getCusto() {
-		return custo;
+	public double getPrecoCusto() {
+		return precoCusto;
 	}
-	public void setCusto(double custo) {
-		this.custo = custo;
+	public void setPrecoCusto(double precoCusto) {
+		this.precoCusto = precoCusto;
 	}
-	public double getVenda() {
-		return venda;
+	public double getPrecoVenda() {
+		return precoVenda;
 	}
-	public void setVenda(double venda) {
-		this.venda = venda;
+	public void setPrecoVenda(double precoVenda) {
+		this.precoVenda = precoVenda;
 	}
-	public int getQuantidade() {
-		return quantidade;
+	public double getSaldo() {
+		return saldo;
 	}
-	public void setQuantidade(int quantidade) {
-		this.quantidade = quantidade;
+	public void setSaldo(double saldo) {
+		this.saldo = saldo;
 	}
 }
-

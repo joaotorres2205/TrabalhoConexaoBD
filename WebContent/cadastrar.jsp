@@ -15,31 +15,31 @@ crossorigin="anonymous">
 		<div class="form-group row">
 		    <label for="txtdescricao" class="col-sm-2 col-form-label">Produto:</label>
 		    	<div class="col-sm-10">
-		       <input type="text" class="form-control" id="txtdescricao" name="descricao" style="width: 50%">
+		       <input type="text" class="form-control" id="descricao" name="descricao" style="width: 50%">
 		    </div>
 	  	</div>
 	  	<div class="form-group row">
 		    <label for="txtmarca" class="col-sm-2 col-form-label">Marca:</label>
 		    	<div class="col-sm-10">
-		       <input type="text" class="form-control" id="txtmarca" name="marca" style="width: 50%">
+		       <input type="text" class="form-control" id="marca" name="marca" style="width: 50%">
 		    </div>
 	  	</div>
 	  	<div class="form-group row">
-		    <label for="txtcusto" class="col-sm-2 col-form-label">Preço de Custo:</label>
+		    <label for="precoCusto" class="col-sm-2 col-form-label">Preço de Custo:</label>
 		    	<div class="col-sm-10">
-		       <input type="text" class="form-control" placeholder="R$" id="txtcusto" name="custo" style="width: 30%">
+		       <input type="text" class="form-control" placeholder="R$" id="precoCusto" name="precoCusto" style="width: 30%">
 		    </div>
 	  	</div>
 	  	<div class="form-group row">
-		    <label for="txtvenda" class="col-sm-2 col-form-label">Preço de Venda:</label>
+		    <label for="precoVenda" class="col-sm-2 col-form-label">Preço de Venda:</label>
 		    	<div class="col-sm-10">
-		       <input type="text" class="form-control" placeholder="R$" id="txtvenda" name="venda" style="width: 30%">
+		       <input type="text" class="form-control" placeholder="R$" id="precoVenda" name="precoVenda" style="width: 30%">
 		    </div>
 	  	</div>
 	  	<div class="form-group row">
 		    <label for="txtquantidade" class="col-sm-2 col-form-label">Quantidade:</label>
 		    	<div class="col-sm-10">
-		       <input type="text" class="form-control" id="txtquantidade" name="quantidade" style="width: 30%">
+		       <input type="text" class="form-control" id="quantidade" name="saldo" style="width: 30%">
 		    </div>
 	  	</div>
 	  	<button type="submit" class="btn btn-secondary" style="margin-left: 25%">Salvar</button>

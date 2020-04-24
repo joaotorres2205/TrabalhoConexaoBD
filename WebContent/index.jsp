@@ -13,7 +13,7 @@ crossorigin="anonymous">
 
 <title>Insert title here</title>
 </head>
-<jsp:useBean id="lst" class="produto.Lista" scope="page"/>
+<jsp:useBean id="lst" class="produto.ProdutoDao" scope="page"/>
 <body style="background-color:#1332A2">
 	</br>
 	</br>	
@@ -22,27 +22,32 @@ crossorigin="anonymous">
 		</div>
 	</br>
 		<center><a href="cadastrar.jsp" class="btn btn-secondary btn-lg active" role="button" aria-pressed="true">Cadastrar</a></center>
-	<br/><br/><br/>
+	<br/><br/>
 		
 	<div class="table-responsive" style="width: 80%; margin-left: 10%">
 	<table border="1px" class="table table-dark" >
 	  <thead>
 	    <tr>
-			<th scope="col">Produto</th>
-			<th scope="col">Marca</th>
-			<th scope="col">Quantidade</th>
-			<th scope="col">Preço de Venda</th>
-			<th scope="col">Preço de Custo</th>
+			<th scope="col">id</th>
+				<th scope="col">Descrição</th>
+				<th scope="col">Marca</th>
+				<th scope="col">Preço de Custo</th>
+				<th scope="col">Preço de Venda</th>
+				<th scope="col">Saldo</th>
+				<th scope="col">Excluir</th>
 		</tr>
 	  </thead>	
 			<c:forEach var="p" items="${lst.listar()}">
 				<tbody>
 					<tr>
+						<td class="bg-info">${p.idproduto}</td>
 						<td class="bg-info">${p.descricao}</td>
 						<td class="bg-info">${p.marca}</td>
-						<td class="bg-info">${p.quantidade}</td>
-						<td class="bg-info">${p.venda}</td>
-						<td class="bg-info">${p.custo}</td>
+						<td class="bg-info">${p.precoCusto}</td>
+						<td class="bg-info">${p.precoVenda}</td>
+						<td class="bg-info">${p.saldo}</td>
+						</br>
+						<td><a class="btn btn-secondary" href="Excluir.jsp?idproduto=${p.getIdproduto()}" role="button">Excluir</a></td>
 					</tr>
 				</tbody>
 			</c:forEach>
@@ -50,20 +55,20 @@ crossorigin="anonymous">
 	</table>
 	<table border="1px" class="table table-dark table-sm" >
 	  <thead>
-	    <tr>
-	    	<th scope="col"> Estoque</th>
-			<th scope="col">Total Venda</th>
-			<th scope="col">Total Custo</th>
-			<th scope="col">Ganho</th>
+	   			<tr>
+	    	<th scope="col">Total Preço de Venda</th>
+			<th scope="col">Total Preço de Custo</th>
+			<th scope="col">Saldo Total</th>
+
 		</tr>
 	  </thead>	
 	  	
 	   	<tbody>
 			<tr>
-				<td class="bg-info">${lst.totalq}</td>
-				<td class="bg-info"><fmt:formatNumber type = "number" pattern = "0.00" value = "${lst.totalv}" /></td>
-				<td class="bg-info"><fmt:formatNumber type = "number" pattern = "0.00" value = "${lst.totalc}" /></td>
-				<td class="bg-info"><fmt:formatNumber type = "number" pattern = "0.00" value = "${lst.lucro}" /></td>
+				<td class="bg-info">${lst.getTotalPrecoVenda(lst.listar())}</td>
+				<td class="bg-info">${lst.getTotalPrecoCusto(lst.listar())}</td>
+				<td class="bg-info">${lst.getTotalSaldo(lst.listar())}</td>
+				
 			</tr>
 		</tbody>
 		

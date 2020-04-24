@@ -13,7 +13,7 @@ crossorigin="anonymous">
 <body style="background-color: #1332A2; text-align: center">
 	
 	<jsp:useBean id="p" class="produto.Produto" scope="page"/>
-	<jsp:useBean id="lst" class="produto.Lista" scope="page"/>
+	<jsp:useBean id="lst" class="produto.ProdutoDao" scope="page"/>
 	
 	<jsp:setProperty property="*" name="p"/>
 	
